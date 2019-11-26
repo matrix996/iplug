@@ -1,0 +1,9 @@
+/* pages/add-cart/add-cart.wxss */
+.fixed-bar-button{
+    background-color: #f4b73f;
+    color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    

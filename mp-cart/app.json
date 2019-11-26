@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/add-cart/add-cart",
+    "pages/account-cart/account-cart"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF2600",
+    "navigationBarTitleText": "练习小demo",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar":{
+    "list":[
+      {
+        "pagePath":"pages/index/index",
+        "text":"首页"
+      },
+      {
+        "pagePath":"pages/logs/logs",
+        "text":"日志"
+      },
+      {
+        "pagePath":"pages/add-cart/add-cart",
+        "text":"添加购物车"
+      },
+      {
+        "pagePath":"pages/account-cart/account-cart",
+        "text":"购物车结算"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,42 @@
+<script src="./lib/jquery3.4.1.js"></script>
+<style>
+li{
+    width: 100px;
+    height: 20px;
+    border: 1px solid red;
+}
+</style>
+
+<ul >
+   <li>1</li>
+   <li>2</li>
+   <li>3</li>
+   <li>4</li>
+</ul>
+<script>
+$(function(){  
+ // jQuery方法
+$('ul').on('click',function(e){   
+    alert($(e.target).index())
+})
+//原生js方法
+var li = document.querySelectorAll('li')
+  for (var i=0;i<li.length;i++){
+        li[i].index =i //这里的index作为索引
+        li[i].onclick = function(){
+        alert(this.index)
+        }
+      }
+  
+})
+
+</script>
+<script>
+(function ($) {
+  $.add = function (a, b) {
+    return a + b;
+  }
+}($))
+console.log($.add(5, 6))
+
+</script>

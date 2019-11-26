@@ -1,0 +1,8 @@
+<!--pages/add-cart/add-cart.wxml-->
+<text>pages/add-cart/add-cart.wxml</text>
+<view class="goods-info">
+<view class="goods-info-price">￥{{ goods_all.goods_price }}</view>
+<view class="goods-info-name">{{ goods_all.goods_name }}</view> 
+<view class="fixed-bar-button" bindtap="addToCart">加入购物车 </view> 
+<rich-text class="goods-detail-image-rich" nodes="{{goods_all.goods_introduce}}"></rich-text>
+</view>

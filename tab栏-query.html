@@ -1,0 +1,91 @@
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        .wrapper {
+            width: 320px;            
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        .tab {
+            border: 1px solid black; 
+            border-bottom: 0;          
+            height: 36px;
+            width: 320px;
+        }
+        .tab li {
+            position: relative;
+            float: left;
+            width: 80px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            cursor: pointer;           
+        }
+        .tab li::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 10px;
+            background:pink;
+            width: 2px;
+            height: 14px;
+            overflow: hidden;
+        } 
+        .tab li:last-child:after{          
+            background:none;
+        }     
+        ul li.active {
+            border-top:1px solid red;            
+        }   
+        .content{
+            width: 320px;
+            height: 100px;
+            border: 1px solid black;
+            border-top: none;
+        }
+        .content .item {
+            float: left;
+            display: none;
+        }
+        .content .item.selected {
+            display: block;
+        }
+    </style>
+<script src="./lib/jquery3.4.1.js"></script>
+<script>
+    $(window).ready(function () {     
+        $("ul li").mouseenter(function () {
+            //让该li添加类active;其他的兄弟节点删除active类
+            $(this).addClass("active").siblings("li").removeClass("active");
+            //让该li对应索引值的下面的content里面的div添加selected类,其他的兄弟节点删除selected类
+            $(".item").eq($(this).index()).addClass("selected").siblings("div").removeClass("selected");
+        });
+    });
+</script>
+<div class="wrapper">
+    <ul class="tab">
+        <li class="tab-item active">标题1</li>
+        <li class="tab-item">标题2</li>
+        <li class="tab-item">标题3</li>
+        <li class="tab-item">标题4</li>
+    </ul>
+    <div class="content">
+        <div class="item selected">
+           <p>这是Tab栏的内容1</p>
+        </div>
+        <div class="item">
+           <p>这是Tab栏的内容2</p>
+        </div>
+        <div class="item">
+            <p>这是Tab栏的内容3</p>
+        </div>
+        <div class="item">
+         <p>这是Tab栏的内容4</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<!--pages/account-cart/account-cart.wxml-->
+<text>pages/account-cart/account-cart.wxml</text>
+<block wx:for="{{ cartList }}" wx:key="goods_id">            
+    <!-- 获取商品信息 -->    
+    <view class="iconfont {{ item.selected ? 'iconxuanzhong':'iconxuanze' }}" bindtap="changeItemSelect" data-id="{{ item.goods_id }}"> </view> 
+        <image src="{{ item.goods_small_logo}}"></image>           
+        <view>{{ item.goods_name }}</view>
+        <view>￥{{ item.goods_price }}</view>       
+    <!-- 商品的计数器 -->       
+    <view catchtap="countHandle" data-id="{{ item.goods_id }}" data-num="{{ -1 }}">-</view>
+    <input catchblur="countBlur" data-id="{{ item.goods_id }}" type="number" value="{{ item.count }}"></input>
+    <view catchtap="countHandle" data-id="{{ item.goods_id }}" data-num="{{ 1 }}">+</view>           
+</block> 
+<view class="iconfont {{ selectAllStatus ? 'iconxuanzhong' : 'iconxuanze'}}" bindtap="changeAllSelect">全选</view> 
+<view> 合计:￥{{ totalPrice }} </view>
